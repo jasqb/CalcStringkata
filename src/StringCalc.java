@@ -24,8 +24,8 @@ public class StringCalc {
         String let2 = str[1].trim();
 
 
-        boolean addAndSubst = wOp(operands[defineOp]);
-        boolean isMultiAndDiv = wOp2(operands[defineOp]);
+        boolean isAddAndSubst = isAddAndSubst(operands[defineOp]);
+        boolean isMultiAndDiv = isMultiAndDiv(operands[defineOp]);
         int a;
 
         for (int i = 0; i < numbers.length; i++) {
@@ -35,7 +35,7 @@ public class StringCalc {
         }
 
 
-        if (addAndSubst) {
+        if (isAddAndSubst) {
             if (!let2.contains("\""))
                 throw new RuntimeException("т.к. выполнять сложение либо вычитание нужно на строку.");
             String result = additionAndSubtraction(operands[defineOp], let1, let2);
@@ -100,7 +100,7 @@ public class StringCalc {
     }
 
 
-    private static boolean wOp(String o1) {
+    private static boolean isAddAndSubst(String o1) {
         boolean isOperands = false;
 
         if (o1.contains("+")) {
@@ -112,7 +112,7 @@ public class StringCalc {
         return isOperands;
     }
 
-    private static boolean wOp2(String o1) {
+    private static boolean isMultiAndDiv(String o1) {
         boolean isOperands = false;
 
         if (o1.contains("*")) {
@@ -123,6 +123,5 @@ public class StringCalc {
         }
         return isOperands;
     }
-
 }
 
