@@ -7,7 +7,7 @@ public class StringCalc {
         String s = scanner.nextLine();
         String[] operands = {" + ", " - ", " / ", " * "};
         String[] opera = {" \\+ ", " - ", " / ", " \\* "};
-        String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+        String[] numbers = {"0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
 
         int defineOp = -1;
